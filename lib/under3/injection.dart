@@ -45,31 +45,36 @@ class InjectScreen extends StatefulWidget {
 
 class _InjectScreenState extends State<InjectScreen> {
   final inoculationConnect = Get.put(InoculationConnect());
-  List<Widget> _listItems = new List.empty();
-  List<bool> bool_list = [];
+  List<Widget> _listItems = [];
+  bool _isLoading = true;
+
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(milliseconds: 1000), () async {
-      // 로그인 통신 로직
-      Map<String, dynamic> result = await inoculationConnect.receiveinfo();
-      return result;
-    }).then((value) {
-      if (value['code'] == 200) {
-        // 데이터들 불러오기
-        List<dynamic> InoculationList = value['data'];
+    _fetchInoculationData();
+  }
 
-        for (int i = 0; i < InoculationList.length; i++) {
-          _listItems.add(buildListItem(i, InoculationList[i]['inoculationDate'],
-              InoculationList[i]['inoculationName'], '시흥보건소'));
-          bool_list.add(false);
-        }
-        setState(() {
-          _listItems = _listItems;
-        });
-        print(_listItems);
-      } else {}
-    });
+  Future<void> _fetchInoculationData() async {
+    Map<String, dynamic> result = await inoculationConnect.receiveinfo();
+    if (result['code'] == 200) {
+      List<dynamic> InoculationList = result['data'];
+      List<Widget> tempItems = [];
+
+      for (int i = 0; i < InoculationList.length; i++) {
+        tempItems.add(buildListItem(i, InoculationList[i]['inoculationDate'],
+            InoculationList[i]['inoculationName'], '시흥보건소'));
+      }
+
+      setState(() {
+        _listItems = tempItems;
+        _isLoading = false;
+      });
+    } else {
+      // handle error
+      setState(() {
+        _isLoading = false;
+      });
+    }
   }
 
   Widget build(BuildContext context) {
@@ -157,9 +162,11 @@ class _InjectScreenState extends State<InjectScreen> {
         SizedBox(
           height: 300,
           width: 450,
-          child: ListView(
-            children: _listItems,
-          ),
+          child: _isLoading
+              ? Center(child: CircularProgressIndicator())
+              : ListView(
+                  children: _listItems,
+                ),
         ),
         Container(
           height: 1,
@@ -197,14 +204,6 @@ class _InjectScreenState extends State<InjectScreen> {
                   place,
                   style: textdeco,
                 ),
-              ),
-              Checkbox(
-                value: bool_list[index],
-                onChanged: (bool? value) {
-                  setState(() {
-                    bool_list[index] = value!;
-                  });
-                },
               ),
             ],
           ),
