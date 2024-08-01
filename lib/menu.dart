@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:probono_app/shared/menu_bottom.dart';
+import 'package:probono_app/two/two1.dart';
 import 'cam/cam.dart';
 import 'under3/chart.dart';
 import 'under3/injection.dart';
@@ -17,7 +18,7 @@ ButtonStyle outlinedeco = OutlinedButton.styleFrom(
 
 const TextStyle textdeco = TextStyle(
     fontFamily: 'GmarketSans',
-    fontSize: 18,
+    fontSize: 25,
     fontWeight: FontWeight.w500,
     color: Colors.black);
 
@@ -52,7 +53,7 @@ class _MenuScreenState extends State<MenuScreen> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(height: 150),
+        const SizedBox(height: 200),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -66,8 +67,8 @@ class _MenuScreenState extends State<MenuScreen> {
                 children: [
                   Image.asset(
                     'assets/one.png',
-                    width: 105,
-                    height: 60,
+                    width: 180,
+                    height: 120,
                   ),
                   const SizedBox(height: 5),
                   const Text('역류 방지', style: textdeco),
@@ -79,18 +80,16 @@ class _MenuScreenState extends State<MenuScreen> {
             ),
             OutlinedButton(
               onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => Chart())); //여기 수정해야함
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Two())); //여기 수정해야함
               },
               style: outlinedeco,
               child: Column(
                 children: [
                   Image.asset(
                     'assets/two.png',
-                    width: 105,
-                    height: 60,
+                    width: 180,
+                    height: 120,
                   ),
                   const SizedBox(height: 5),
                   const Text('트름 유도', style: textdeco),
@@ -113,8 +112,8 @@ class _MenuScreenState extends State<MenuScreen> {
                 children: [
                   Image.asset(
                     'assets/three.png',
-                    width: 105,
-                    height: 60,
+                    width: 180,
+                    height: 120,
                   ),
                   const SizedBox(height: 5),
                   const Text('침대 스윙', style: textdeco),
@@ -136,8 +135,8 @@ class _MenuScreenState extends State<MenuScreen> {
                 children: [
                   Image.asset(
                     'assets/four.png',
-                    width: 105,
-                    height: 60,
+                    width: 180,
+                    height: 120,
                   ),
                   const SizedBox(height: 5),
                   const Text('뒤집기', style: textdeco),
@@ -160,8 +159,8 @@ class _MenuScreenState extends State<MenuScreen> {
                 children: [
                   Image.asset(
                     'assets/camera.png',
-                    width: 105,
-                    height: 60,
+                    width: 180,
+                    height: 120,
                   ),
                   const SizedBox(height: 5),
                   const Text('아이 보기', style: textdeco),
@@ -181,8 +180,8 @@ class _MenuScreenState extends State<MenuScreen> {
                 children: [
                   Image.asset(
                     'assets/five.png',
-                    width: 105,
-                    height: 60,
+                    width: 180,
+                    height: 120,
                   ),
                   const SizedBox(height: 5),
                   const Text('침대 고정', style: textdeco),
@@ -205,8 +204,8 @@ class _MenuScreenState extends State<MenuScreen> {
                 children: [
                   Image.asset(
                     'assets/injection.png',
-                    width: 50,
-                    height: 50,
+                    width: 100,
+                    height: 100,
                   ),
                   const SizedBox(height: 5),
                   const Text('예방 접종', style: textdeco),
@@ -226,8 +225,8 @@ class _MenuScreenState extends State<MenuScreen> {
                 children: [
                   Image.asset(
                     'assets/chart.png',
-                    width: 50,
-                    height: 50,
+                    width: 100,
+                    height: 100,
                   ),
                   const SizedBox(height: 5),
                   const Text('의료 차트', style: textdeco)
@@ -249,8 +248,8 @@ class _MenuScreenState extends State<MenuScreen> {
                 children: [
                   Image.asset(
                     'assets/note.png',
-                    width: 50,
-                    height: 50,
+                    width: 100,
+                    height: 100,
                   ),
                   const SizedBox(height: 5),
                   const Text('취침 이력', style: textdeco)

@@ -6,7 +6,7 @@ import 'package:probono_app/shared/menu_bottom.dart';
 
 const TextStyle textdeco = TextStyle(
     fontFamily: 'GmarketSans',
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: FontWeight.w500,
     color: Colors.black);
 
@@ -80,6 +80,9 @@ class _InjectScreenState extends State<InjectScreen> {
   Widget build(BuildContext context) {
     var nowDate = DateTime.now();
     String newDate = DateFormat('yy-MM-dd').format(nowDate);
+    Size screenSize = MediaQuery.of(context).size;
+    double screenWidth = screenSize.width;
+    double screenHeight = screenSize.height;
 
     return Column(
       children: <Widget>[
@@ -123,10 +126,10 @@ class _InjectScreenState extends State<InjectScreen> {
           ],
         ),
         const Text(
-          '20일 이내 뇌수막염 1차 접종 필요           ',
+          '20일 이내 뇌수막염 1차 접종 필요                                                       ',
           style: TextStyle(
               fontFamily: 'GmarketSans',
-              fontSize: 20,
+              fontSize: 23,
               fontWeight: FontWeight.w500),
         ),
         const SizedBox(
@@ -141,17 +144,21 @@ class _InjectScreenState extends State<InjectScreen> {
           child: Row(
             children: [
               Text(
-                '  접종 일시   ',
+                '             접종 일시',
                 style: textdeco1,
               ),
               Text(
-                '접종 내역     ',
+                '                  접종 내역',
                 style: textdeco1,
               ),
               Text(
-                '   접종 장소     ',
+                '                  접종 장소',
                 style: textdeco1,
-              )
+              ),
+              Text(
+                '                접종 여부',
+                style: textdeco1,
+              ),
             ],
           ),
         ),
@@ -160,8 +167,8 @@ class _InjectScreenState extends State<InjectScreen> {
           color: const Color.fromARGB(255, 199, 199, 199), // 구분선 색상 설정
         ),
         SizedBox(
-          height: 300,
-          width: 450,
+          height: screenHeight * 0.6,
+          width: screenWidth,
           child: _isLoading
               ? Center(child: CircularProgressIndicator())
               : ListView(
@@ -177,33 +184,42 @@ class _InjectScreenState extends State<InjectScreen> {
   }
 
   Widget buildListItem(int index, String date, String name, String place) {
+    bool isChecked = false;
     return Column(
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               SizedBox(
-                width: 100,
+                width: 150,
                 child: Text(
                   date,
                   style: textdeco,
                 ),
               ),
               SizedBox(
-                width: 130,
+                width: 150,
                 child: Text(
                   name,
                   style: textdeco,
                 ),
               ),
               SizedBox(
-                width: 100,
+                width: 150,
                 child: Text(
                   place,
                   style: textdeco,
                 ),
+              ),
+              Checkbox(
+                value: isChecked,
+                onChanged: (bool? value) {
+                  setState(() {
+                    isChecked = value ?? true;
+                  });
+                },
               ),
             ],
           ),

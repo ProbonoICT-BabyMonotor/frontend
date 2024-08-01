@@ -75,6 +75,14 @@ flutter:
     - assets/four.png
     - assets/five.png
     - assets/one_guide.png
+    - assets/one_guide2.png
+    - assets/one_guide3.png
+    - assets/two_guide.png
+    - assets/two_guide2.png
+    - assets/two_guide3.png
+    - assets/stage1.png
+    - assets/stage2.png
+    - assets/stage3.png
   
 
   # An image asset can refer to one or more resolution-specific "variants", see

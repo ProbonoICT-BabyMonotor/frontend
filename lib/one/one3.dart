@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:probono_app/one/one1.dart';
 import 'package:probono_app/one/one2.dart';
 import 'package:probono_app/shared/menu_bottom.dart';
 import 'package:probono_app/menu.dart';
 
-class One extends StatefulWidget {
-  const One({super.key});
+class One3 extends StatefulWidget {
+  const One3({super.key});
 
   @override
   _OneState createState() => _OneState();
 }
 
-class _OneState extends State<One> {
+class _OneState extends State<One3> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
@@ -18,7 +19,7 @@ class _OneState extends State<One> {
           leading: IconButton(
               onPressed: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Menu()));
+                    context, MaterialPageRoute(builder: (context) => One2()));
               },
               icon: const Icon(Icons.keyboard_backspace)),
           title: const Text(
@@ -54,25 +55,18 @@ class _OneScreenState extends State<OneScreen> {
           color: Color.fromARGB(255, 137, 137, 137), // 구분선 색상 설정
         ),
         Image.asset(
-          'assets/stage1.png',
+          'assets/stage3.png',
           width: 700,
-          height: 150,
-        ),
-        Container(
-          height: 1,
-          color: Color.fromARGB(255, 137, 137, 137), // 구분선 색상 설정
-        ),
-        SizedBox(
-          height: 150,
+          height: 148,
         ),
         Container(
           height: 1,
           color: Color.fromARGB(255, 137, 137, 137), // 구분선 색상 설정
         ),
         Image.asset(
-          'assets/one_guide.png',
+          'assets/one_guide3.png',
           width: 700,
-          height: 600,
+          height: 751,
         ),
         SizedBox(
           width: 350, // 너비 설정
@@ -80,7 +74,7 @@ class _OneScreenState extends State<OneScreen> {
           child: ElevatedButton(
             onPressed: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => One2()));
+                  context, MaterialPageRoute(builder: (context) => Menu()));
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFF9B95ED),
@@ -91,7 +85,7 @@ class _OneScreenState extends State<OneScreen> {
               elevation: 5, // 그림자 높이 설정
             ),
             child: const Text(
-              '동작하기',
+              '홈으로 가기',
               style: TextStyle(
                 fontFamily: 'GmarketSans', // 버튼 텍스트 폰트 적용
                 fontWeight: FontWeight.bold,

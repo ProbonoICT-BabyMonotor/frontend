@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:probono_app/one/one2.dart';
 import 'package:probono_app/shared/menu_bottom.dart';
 import 'package:probono_app/menu.dart';
+import 'package:probono_app/two/two2.dart';
 
-class One extends StatefulWidget {
-  const One({super.key});
+class Two extends StatefulWidget {
+  const Two({super.key});
 
   @override
-  _OneState createState() => _OneState();
+  _TwoState createState() => _TwoState();
 }
 
-class _OneState extends State<One> {
+class _TwoState extends State<Two> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
@@ -22,7 +22,7 @@ class _OneState extends State<One> {
               },
               icon: const Icon(Icons.keyboard_backspace)),
           title: const Text(
-            '역류 방지 기능 수행',
+            '트름 유도 기능 수행',
             style: TextStyle(
                 fontFamily: 'GmarketSans',
                 fontSize: 20,
@@ -32,20 +32,20 @@ class _OneState extends State<One> {
         bottomNavigationBar: MenuBottom(),
         backgroundColor: Colors.white,
         body: Center(
-          child: OneScreen(),
+          child: TwoScreen(),
         ),
       ),
     );
   }
 }
 
-class OneScreen extends StatefulWidget {
-  const OneScreen({super.key});
+class TwoScreen extends StatefulWidget {
+  const TwoScreen({super.key});
   @override
-  _OneScreenState createState() => _OneScreenState();
+  _TwoScreenState createState() => _TwoScreenState();
 }
 
-class _OneScreenState extends State<OneScreen> {
+class _TwoScreenState extends State<TwoScreen> {
   Widget build(BuildContext context) {
     return Column(
       children: [
@@ -70,7 +70,7 @@ class _OneScreenState extends State<OneScreen> {
           color: Color.fromARGB(255, 137, 137, 137), // 구분선 색상 설정
         ),
         Image.asset(
-          'assets/one_guide.png',
+          'assets/two_guide.png',
           width: 700,
           height: 600,
         ),
@@ -80,7 +80,7 @@ class _OneScreenState extends State<OneScreen> {
           child: ElevatedButton(
             onPressed: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => One2()));
+                  context, MaterialPageRoute(builder: (context) => Two2()));
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFF9B95ED),

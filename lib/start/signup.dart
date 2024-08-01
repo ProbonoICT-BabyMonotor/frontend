@@ -33,7 +33,7 @@ class SignupScreen extends StatefulWidget {
 
 const TextStyle commonTextStyle = TextStyle(
   fontFamily: 'GmarketSans',
-  fontSize: 15,
+  fontSize: 20,
   fontWeight: FontWeight.w500,
 );
 
@@ -112,14 +112,16 @@ class _SignupScreenState extends State<SignupScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Size screenSize = MediaQuery.of(context).size;
+    double screenWidth = screenSize.width;
     return Form(
       key: _formkey,
       child: Column(
         children: <Widget>[
           const SizedBox(height: 30),
           SizedBox(
-            width: 50,
-            height: 50,
+            width: 150,
+            height: 150,
             child: Image.asset(
               'assets/main.png',
               fit: BoxFit.cover,
@@ -129,139 +131,139 @@ class _SignupScreenState extends State<SignupScreen> {
             '회원 가입 하기',
             style: TextStyle(
                 fontFamily: 'GmarketSans',
-                fontSize: 20,
+                fontSize: 40,
                 fontWeight: FontWeight.w500),
           ),
-          const Padding(
-            padding:
-                EdgeInsets.only(left: 0.0, right: 280.0, top: 5.0, bottom: 0.0),
-            child: Text('이름', style: commonTextStyle),
+          Padding(
+            padding: EdgeInsets.only(
+                left: 0.0, right: screenWidth * 0.83, top: 5.0, bottom: 0.0),
+            child: const Text('이름', style: commonTextStyle),
           ),
           Padding(
             padding:
                 const EdgeInsets.symmetric(horizontal: 40.0, vertical: 5.0),
             child: Container(
-              height: 20.0,
+              height: 35.0,
               decoration: boxdeco,
               child: TextFormField(
                   controller: _nameController, decoration: indeco),
             ),
           ),
-          const Padding(
-            padding:
-                EdgeInsets.only(left: 0.0, right: 280.0, top: 5.0, bottom: 0.0),
+          Padding(
+            padding: EdgeInsets.only(
+                left: 0.0, right: screenWidth * 0.81, top: 5.0, bottom: 0.0),
             child: Text('아이디', style: commonTextStyle),
           ),
           Padding(
             padding:
                 const EdgeInsets.symmetric(horizontal: 40.0, vertical: 5.0),
             child: Container(
-              height: 20.0,
+              height: 35.0,
               decoration: boxdeco,
               child:
                   TextFormField(controller: _idController, decoration: indeco),
             ),
           ),
-          const Padding(
-            padding:
-                EdgeInsets.only(left: 0.0, right: 280.0, top: 5.0, bottom: 0.0),
+          Padding(
+            padding: EdgeInsets.only(
+                left: 0.0, right: screenWidth * 0.79, top: 5.0, bottom: 0.0),
             child: Text('전화번호', style: commonTextStyle),
           ),
           Padding(
             padding:
                 const EdgeInsets.symmetric(horizontal: 40.0, vertical: 5.0),
             child: Container(
-              height: 20.0,
+              height: 35.0,
               decoration: boxdeco,
               child: TextFormField(
                   controller: _phoneController, decoration: indeco),
             ),
           ),
-          const Padding(
-            padding:
-                EdgeInsets.only(left: 0.0, right: 260.0, top: 5.0, bottom: 0.0),
+          Padding(
+            padding: EdgeInsets.only(
+                left: 0.0, right: screenWidth * 0.79, top: 5.0, bottom: 0.0),
             child: Text('비밀번호', style: commonTextStyle),
           ),
           Padding(
             padding:
                 const EdgeInsets.symmetric(horizontal: 40.0, vertical: 5.0),
             child: Container(
-              height: 20.0,
+              height: 35.0,
               decoration: boxdeco,
               child:
                   TextFormField(controller: _pwController, decoration: indeco),
             ),
           ),
-          const Padding(
-            padding:
-                EdgeInsets.only(left: 0.0, right: 280.0, top: 5.0, bottom: 0.0),
+          Padding(
+            padding: EdgeInsets.only(
+                left: 0.0, right: screenWidth * 0.83, top: 5.0, bottom: 0.0),
             child: Text('생일', style: commonTextStyle),
           ),
           Padding(
             padding:
                 const EdgeInsets.symmetric(horizontal: 40.0, vertical: 5.0),
             child: Container(
-              height: 20.0,
+              height: 35.0,
               decoration: boxdeco,
               child: TextFormField(
                   controller: _birthController, decoration: indeco),
             ),
           ),
-          const Padding(
-            padding:
-                EdgeInsets.only(left: 0.0, right: 280.0, top: 5.0, bottom: 0.0),
+          Padding(
+            padding: EdgeInsets.only(
+                left: 0.0, right: screenWidth * 0.7, top: 5.0, bottom: 0.0),
             child: Text('성별 ( F or M )', style: commonTextStyle),
           ),
           Padding(
             padding:
                 const EdgeInsets.symmetric(horizontal: 40.0, vertical: 5.0),
             child: Container(
-              height: 20.0,
+              height: 35.0,
               decoration: boxdeco,
               child: TextFormField(
                   controller: _genderController, decoration: indeco),
             ),
           ),
-          const Padding(
-            padding:
-                EdgeInsets.only(left: 0.0, right: 250.0, top: 5.0, bottom: 0.0),
+          Padding(
+            padding: EdgeInsets.only(
+                left: 0.0, right: screenWidth * 0.77, top: 5.0, bottom: 0.0),
             child: Text('아기 이름', style: commonTextStyle),
           ),
           Padding(
             padding:
                 const EdgeInsets.symmetric(horizontal: 40.0, vertical: 5.0),
             child: Container(
-              height: 20.0,
+              height: 35.0,
               decoration: boxdeco,
               child: TextFormField(
                   controller: _babynameController, decoration: indeco),
             ),
           ),
-          const Padding(
-            padding:
-                EdgeInsets.only(left: 0.0, right: 250.0, top: 5.0, bottom: 0.0),
+          Padding(
+            padding: EdgeInsets.only(
+                left: 0.0, right: screenWidth * 0.77, top: 5.0, bottom: 0.0),
             child: Text('아기 생일', style: commonTextStyle),
           ),
           Padding(
             padding:
                 const EdgeInsets.symmetric(horizontal: 40.0, vertical: 5.0),
             child: Container(
-              height: 20.0,
+              height: 35.0,
               decoration: boxdeco,
               child: TextFormField(
                   controller: _babybirthController, decoration: indeco),
             ),
           ),
-          const Padding(
-            padding:
-                EdgeInsets.only(left: 0.0, right: 240.0, top: 5.0, bottom: 0.0),
+          Padding(
+            padding: EdgeInsets.only(
+                left: 0.0, right: screenWidth * 0.74, top: 5.0, bottom: 0.0),
             child: Text('아기 몸무게', style: commonTextStyle),
           ),
           Padding(
             padding:
                 const EdgeInsets.symmetric(horizontal: 40.0, vertical: 5.0),
             child: Container(
-              height: 20.0,
+              height: 35.0,
               decoration: boxdeco,
               child: TextFormField(
                   controller: _babyweightController,
@@ -269,28 +271,31 @@ class _SignupScreenState extends State<SignupScreen> {
                   decoration: indeco),
             ),
           ),
-          const SizedBox(height: 5),
-          ElevatedButton(
-            onPressed: _submitForm,
-            style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFF9B95ED),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
+          const SizedBox(height: 40),
+          SizedBox(
+            width: 270, // 너비 설정
+            height: 70, // 높이 설정
+            child: ElevatedButton(
+              onPressed: _submitForm,
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF9B95ED),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                shadowColor: Colors.black.withOpacity(1.0), // 그림자 색상 설정
+                elevation: 5, // 그림자 높이 설정
               ),
-              shadowColor: Colors.black.withOpacity(1.0), // 그림자 색상 설정
-              elevation: 5, // 그림자 높이 설정
-              //minimumSize: SizedBox(200, 50),
-            ),
-            child: const Text(
-              '등록하기',
-              style: TextStyle(
-                fontFamily: 'GmarketSans', // 버튼 텍스트 폰트 적용
-                fontWeight: FontWeight.bold,
-                fontSize: 25,
-                color: Colors.white,
+              child: const Text(
+                '등록하기',
+                style: TextStyle(
+                  fontFamily: 'GmarketSans', // 버튼 텍스트 폰트 적용
+                  fontWeight: FontWeight.bold,
+                  fontSize: 40,
+                  color: Colors.white,
+                ),
               ),
             ),
-          ),
+          )
         ],
       ),
     );

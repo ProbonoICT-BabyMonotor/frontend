@@ -3,7 +3,7 @@ import 'package:probono_app/shared/menu_bottom.dart';
 
 const TextStyle commonTextStyle = TextStyle(
   fontFamily: 'GmarketSans',
-  fontSize: 20,
+  fontSize: 27,
   fontWeight: FontWeight.w300,
 );
 
@@ -41,8 +41,8 @@ Widget textbox(String label, String text) {
         ),
       ),
       Container(
-        width: 350,
-        height: 40,
+        width: 550,
+        height: 50,
         padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
         decoration: boxdeco,
         child: Text(
@@ -92,8 +92,8 @@ class _MypageScreenState extends State<MypageScreen> {
       children: <Widget>[
         const SizedBox(height: 30),
         SizedBox(
-          width: 100,
-          height: 100,
+          width: 170,
+          height: 170,
           child: Image.asset(
             'assets/main.png',
             fit: BoxFit.cover,
@@ -104,16 +104,16 @@ class _MypageScreenState extends State<MypageScreen> {
           '마이페이지',
           style: TextStyle(
               fontFamily: 'GmarketSans',
-              fontSize: 30,
+              fontSize: 50,
               fontWeight: FontWeight.w500),
         ),
-        const SizedBox(height: 3),
+        const SizedBox(height: 10),
         textbox('아이디', id),
-        const SizedBox(height: 7),
+        const SizedBox(height: 25),
         textbox('아기 이름', name),
-        const SizedBox(height: 7),
+        const SizedBox(height: 25),
         textbox('생년 월일(8자)', birth),
-        const SizedBox(height: 7),
+        const SizedBox(height: 25),
         textbox('전화번호(11자)', number),
       ],
     );

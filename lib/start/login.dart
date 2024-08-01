@@ -66,6 +66,10 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Size screenSize = MediaQuery.of(context).size;
+    double screenWidth = screenSize.width;
+    double screenHeight = screenSize.height;
+
     return Form(
       key: _formkey,
       child: Column(
@@ -87,10 +91,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 fontFamily: 'GmarketSans'),
           ),
           const SizedBox(height: 30),
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(
-                left: 0.0, right: 270.0, top: 10.0, bottom: 0.0),
-            child: Text(
+                left: 0.0, right: screenWidth * 0.82, top: 10.0, bottom: 0.0),
+            child: const Text(
               '아이디',
               textAlign: TextAlign.left, // 텍스트를 좌측으로 정렬합니다
               style: TextStyle(
@@ -117,7 +121,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: TextFormField(
                 controller: _idController,
                 keyboardType: TextInputType.text,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10.0)),
                   ),
@@ -131,10 +135,10 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
           const SizedBox(height: 10),
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(
-                left: 0.0, right: 250.0, top: 10.0, bottom: 0.0),
-            child: Text(
+                left: 0.0, right: screenWidth * 0.8, top: 10.0, bottom: 0.0),
+            child: const Text(
               '비밀번호',
               textAlign: TextAlign.left, // 텍스트를 좌측으로 정렬합니다
               style: TextStyle(
